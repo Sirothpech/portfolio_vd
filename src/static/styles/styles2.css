@@ -1,0 +1,221 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Utilisez une structure de colonne pour aligner le footer en bas */
+  min-height: 100vh; /* Utilisez min-height pour s'assurer que le contenu pousse le footer vers le bas */
+}
+
+nav {
+  background-color: #fff;
+  padding-right: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed; /* Rendre la navbar fixe */
+  top: 0; /* Aligner la navbar en haut de la fenêtre */
+  left: 0; /* Aligner la navbar à gauche de la fenêtre */
+  right: 0; /* Aligner la navbar à droite de la fenêtre */
+  z-index: 1000; /* Assurez-vous que la navbar est au-dessus du contenu */
+}
+
+.logo {
+  padding-left: 10px;
+}
+
+.logo img {
+  padding-left: 0;
+  width: 50px; /* Ajustez la taille de votre logo */
+  aspect-ratio: 1/1;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Couleur blanche avec une faible opacité */
+  transition: box-shadow 0.3s ease; /* Animation de transition */
+  border-radius: 50%;
+}
+
+.logo img:hover {
+  box-shadow: 0 0 20px rgba(2, 0, 36, 0.7); /* Couleur blanche plus prononcée au survol */
+  transition: box-shadow 0.7s ease; /* Animation de transition */
+  background-color: #ffffff;
+}
+
+.texte-a-cote {
+  margin-right: auto;
+}
+.texte-a-cote p {
+  color: #636363; /* Couleur du texte */
+  font-size: 16px; /* Taille de la police (ajustez selon vos besoins) */
+}
+
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.menu li {
+  margin-right: 20px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #636363;
+}
+
+.menu a:hover {
+  text-decoration: none;
+  color: #6a86b1;
+}
+
+footer {
+  color: #636363;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  margin-top: auto; /* Utilisez margin-top: auto pour pousser le footer vers le bas */
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.copyright {
+  flex: 1;
+  text-align: left;
+  font-size: 14px;
+}
+
+.contact-info a {
+  text-decoration: none;
+}
+.contact-info p {
+  flex: 2;
+  text-align: left;
+  font-size: 14px;
+}
+
+.social-links {
+  flex: 1;
+  text-align: right;
+  margin: 0 10px 0 0;
+}
+
+.social-links a {
+  color: #636363;
+  margin-left: 10px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: #66A3FF;
+}
+
+.social-links label {
+  font-size: 12px;
+  margin: 0 0 0 10px;
+}
+
+#intro {
+  position: relative; /* Nécessaire pour positionner le pseudo-élément */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Styles pour le contenu de la section */
+#intro-content {
+  text-align: center;
+  color: #000000;
+}
+
+.intro-content img {
+  width: 100px; /* Ajustez la taille de votre logo */
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.intro-content p {
+  font-size: 32px; /* Ajustez la taille de la police */
+}
+
+.logo-container {
+  text-align: center; /* Pour centrer le contenu horizontalement */
+}
+
+.phrase-container {
+  text-align: center; /* Pour centrer le contenu horizontalement */
+}
+
+.phrase-container p {
+  margin: 0;
+}
+
+.large-text {
+  font-size: 100px; /* Choisissez la taille qui vous convient */
+}
+
+/* Styles pour la section "Features" */
+#features {
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Styles pour chaque élément de fonctionnalité */
+.feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Styles pour l'image de la fonctionnalité */
+.feature-image img {
+  max-width: 100%;
+  height: auto;
+  margin-right: 20px; /* Espace entre l'image et le texte */
+}
+
+/* Styles pour le texte de la fonctionnalité */
+.feature-text {
+  flex: 1; /* Remplit l'espace restant */
+}
+
+.feature-text h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.feature-text p {
+  font-size: 16px;
+  color: #666; /* Couleur de texte personnalisée */
+}
+
+#about {
+  margin-left: 20px;
+}
+
+.submit-button {
+  font-size: medium;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aperçu du modèle de site</title>
+    <style>
+      /* Ajoutez un style pour définir la hauteur maximale et activer la barre de défilement */
+      #preview-container {
+          max-height: 400px; /* Ajustez la hauteur maximale selon vos besoins */
+          overflow-y: auto; /* Ajoute une barre de défilement verticale en cas de dépassement de la hauteur */
+      }
+  </style>
+</head>
+<body>
+    <h1>Aperçu du modèle de site</h1>
+    <div id="preview-container">
+    {{ model_preview|safe }}
+    </div>
+</body>
+</html>

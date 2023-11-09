@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Template View</title>
+    <link rel="stylesheet" href="https://mdbootstrap.com/api/snippets/static/download/MDB5-Free_6.4.2/css/mdb.min.css">
+    <link rel="stylesheet" href="/static/styles/styles_portfolio.css">
+    <link rel="stylesheet" href="/static/styles/styles2.css">
+</head>
+<body>
+    {% if template %}
+        {{ template.html_content|safe }}
+    {% else %}
+        <p>Modèle de site non trouvé.</p>
+    {% endif %}
+</body>
+</html>

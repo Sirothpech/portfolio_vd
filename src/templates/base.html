@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/88d6221bec.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Versatile Design</title>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <a href="{% url 'index' %}"><img src="{% static 'images/logo_vd_1.png' %}" alt="logo_versatile"></a>
+      </div>
+      <div class="texte-a-cote">
+        <p>Versatile Design</p>
+      </div>
+      <ul class="menu">
+        <li class="bouton"><a href="{% url 'index' %}">Accueil</a></li>
+        <li class="bouton"><a href="#tarifs">Tarifs</a></li>
+        <li class="bouton"><a href="{% url 'contact' %}">Contact</a></li>
+        {% if user.is_authenticated %}
+          <li class="bouton"><a href="{% url 'select_template' %}">Templates</a></li>
+          <li class="bouton"><form class="" action="{% url 'logout' %}" method="POST">
+    {% csrf_token %}
+
+    <button type="submit" name="button" class="logout">Se déconnecter</button>
+    </form></li>
+        {% else %}
+        <li class="bouton"><a href="{% url 'register' %}">S'inscrire</a></li>
+        <li class="bouton"><a href="{% url 'login' %}">Se connecter</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+    {% block content %} {% endblock %}
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="copyright">&copy; 2023 Versatile Design</div>
+          <div class="contact-info">
+            <p>Adresse : 123 Rue de la Réussite, Ville</p>
+            <p>Téléphone : +33 123 456 789</p>
+            <p>Email : contact@versatiledesign.com</p>
+          </div>
+          <div class="social-links">
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+</html>

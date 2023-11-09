@@ -1,0 +1,379 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(2,2,20,1) 35%, rgba(9,70,83,1) 100%);
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Utilisez une structure de colonne pour aligner le footer en bas */
+    min-height: 100vh; /* Utilisez min-height pour s'assurer que le contenu pousse le footer vers le bas */
+}
+
+nav {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(2,2,20,1) 35%, rgba(9,70,83,1) 100%);
+    padding-right: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Rendre la navbar fixe */
+    top: 0; /* Aligner la navbar en haut de la fenêtre */
+    left: 0; /* Aligner la navbar à gauche de la fenêtre */
+    right: 0; /* Aligner la navbar à droite de la fenêtre */
+    z-index: 1000; /* Assurez-vous que la navbar est au-dessus du contenu */
+}
+
+.logo {
+    padding-left: 10px;
+}
+
+.logo img {
+    padding-left: 0;
+    width: 50px; /* Ajustez la taille de votre logo */
+    aspect-ratio: 1/1;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Couleur blanche avec une faible opacité */
+    transition: box-shadow 0.3s ease; /* Animation de transition */
+    border-radius: 50%;
+}
+
+.content {
+    flex: 1;
+}
+
+.contact-page .content {
+    flex: auto; /* Cela pousse le contenu vers le haut */
+}
+
+/* Appliquer un halo au survol */
+.logo img:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); /* Couleur blanche plus prononcée au survol */
+    transition: box-shadow 0.7s ease; /* Animation de transition */
+    background-color: #ffffff;
+}
+
+.texte-a-cote {
+    margin: 0 auto 10px 10px
+}
+
+.texte-a-cote p {
+    margin: 0; /* Supprime la marge autour du paragraphe */
+    color: #fff; /* Couleur du texte */
+    font-size: 16px; /* Taille de la police (ajustez selon vos besoins) */
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu li:last-child {
+    margin-right: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu a:hover {
+    text-decoration: none;
+    color: #6a86b1;
+}
+
+
+#apropos {
+    text-align: center; /* Centrer le contenu */
+    color: #FFFFFF; /* Couleur du texte */
+    padding-top: 60px; /* Espace intérieur au-dessus du contenu */
+    padding: 0;
+    position: relative;
+}
+
+#apropos::before {
+    content: "";
+    background-image: url('../images/Wave2.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.2; /* Réglez l'opacité de l'image */
+    position: absolute; /* Position absolue pour la couche d'arrière-plan */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* Mettez cette couche derrière le contenu principal */
+}
+
+.container {
+    max-width: 800px; /* Largeur maximale du contenu */
+    margin: 0 auto; /* Centrer le contenu */
+}
+
+.container h2 {
+    font-size: 50px; /* Taille de la police pour le titre */
+    color: #ffffff; /* Couleur du texte du titre */
+    text-align: left; /* Centrer le texte */
+    margin-top: 60px; /* Supprimer la marge supérieure par défaut */
+    margin-left: 20px;
+}
+
+p {
+    font-size: 20px; /* Taille de la police pour le texte */
+    color: #ffffff; /* Couleur du texte du paragraphe */
+    text-align: justify; /* Justifier le texte */
+    margin: 0;
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1); /* Couleur de fond avec une faible opacité */
+    padding: 20px; /* Espace intérieur autour du texte */
+    border-radius: 10px; /* Coins arrondis pour l'effet de verre */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Ombre légère pour un effet de verre */
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.glass-effect p {
+    font-size: 20px; /* Taille de la police pour le texte */
+    color: #ffffff; /* Couleur du texte */
+}
+
+.ligne-droite {
+    border-top: 1px solid #a5a5a53f; /* Largeur, couleur et style de la ligne */
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+#tarifs {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(2,2,20,1) 35%, rgba(9,70,83,1) 100%);
+    padding: 80px 0; /* Espace intérieur autour du contenu */
+    text-align: center; /* Centrer le contenu */
+}
+
+#tarifs .cont-tarif h2 {
+    font-size: 50px; /* Taille de la police pour le titre */
+    color: #ffffff; /* Couleur du texte du titre */
+    text-align: center; /* Centrer le texte */
+    margin-top: 0; /* Supprimer la marge supérieure par défaut */
+    margin-bottom: 0;
+}
+
+#tarifs .cont-tarif p {
+    font-size: 20px; /* Taille de la police pour le titre */
+    color: #9e9e9e; /* Couleur du texte du titre */
+    text-align: center; /* Centrer le texte */
+    margin-top: 0; /* Supprimer la marge supérieure par défaut */
+}
+
+
+.affiche-container {
+    display: flex;
+    justify-content: center; /* Centre les affiches horizontalement */
+    align-items: start; /* Aligner les affiches en haut */
+    gap: 20px; /* Espacement entre les affiches */
+    flex-wrap: wrap;
+}
+
+.affiche {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.2), 0 0 40px rgba(255, 255, 255, 0.2);
+    margin: 20px;
+    width: 20%; /* Ajustez la largeur des affiches selon vos préférences */
+    text-align: center;
+}
+
+.affiche h3 {
+    font-size: 24px; /* Taille de la police pour le titre */
+    color: #333; /* Couleur du texte du titre */
+}
+
+.affiche p {
+    font-size: 16px; /* Taille de la police pour le texte */
+    color: #777; /* Couleur du texte du paragraphe */
+    text-align: center;
+}
+
+#details {
+    font-size: 16px; /* Taille de la police pour le texte */
+    text-align: justify;
+    margin: 20px;
+}
+
+#option {
+    font-size: 16px; /* Taille de la police pour le texte */
+    font-weight: bold;
+    color: #777; /* Couleur du texte du paragraphe */
+    text-align: left;
+    margin: 20px;
+}
+
+.affiche ul {
+    list-style-type: circle; /* Type de puce */
+}
+
+.affiche li {
+    font-size: 16px; /* Taille de la police pour les éléments de liste */
+    color: #333; /* Couleur du texte de la liste */
+    margin: 0 0 10px 0; /* Marge inférieure pour séparer les éléments de liste */
+    padding-left: 0;
+    text-align: left;
+}
+
+.price {
+    font-size: 24px; /* Taille de la police pour le prix */
+    color: #007BFF; /* Couleur du prix (bleu, par exemple) */
+    margin-top: 10px; /* Marge supérieure pour séparer du contenu précédent */
+}
+
+.large-price {
+    font-size: 24px; /* Taille de police pour les chiffres */
+}
+
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF; /* Couleur de fond du bouton (bleu, par exemple) */
+    color: #FFFFFF; /* Couleur du texte du bouton (blanc) */
+    text-decoration: none;
+    border-radius: 50px;
+    margin: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* Couleur de fond du bouton au survol */
+}
+/* Styles pour le contenu principal */
+.content {
+    flex: 1;
+}
+
+footer {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(2,2,20,1) 35%, rgba(9,70,83,1) 100%);
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    margin-top: auto; /* Utilisez margin-top: auto pour pousser le footer vers le bas */
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    flex: 1;
+    text-align: left;
+    font-size: 14px;
+}
+
+.contact-info p {
+    flex: 2;
+    text-align: left;
+    font-size: 14px;
+}
+
+.social-links {
+    flex: 1;
+    text-align: right;
+}
+
+.social-links a {
+    color: #fff;
+    margin-left: 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #66A3FF;
+}
+
+/* Dans votre fichier styles.css */
+
+.container-contact {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text_contact"],
+input[type="email_contact"],
+textarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button.logout {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff; /* Couleur du texte pour ressembler à un lien */
+    cursor: pointer;
+    background: none; /* Supprimer l'arrière-plan du bouton */
+    border: none; /* Supprimer la bordure du bouton */
+    padding: 0; /* Supprimer le rembourrage du bouton */
+    font-size: 16px;
+}
+
+button.logout:hover {
+    background: none; /* Supprimer l'arrière-plan du bouton */
+    color: #6a86b1;
+}
+

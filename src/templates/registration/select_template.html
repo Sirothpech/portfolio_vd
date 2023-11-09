@@ -1,0 +1,75 @@
+{% extends "base_dashboard.html" %}
+
+{% block title %}Tableau de bord - Mon Site Web{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<head>
+    <title>Sélection de modèle</title>
+    <link rel="stylesheet" href="/static/styles/mdb.min.css">
+    <link rel="stylesheet" href="/static/styles/styles2.css">
+    <link rel="stylesheet" href="/static/styles/styles_portfolio.css">
+    <style>
+      #model-preview {
+        position: fixed;
+        top: 50px; /* Ajustez la position verticale selon vos besoins */
+        left: 50%; /* Centrez horizontalement */
+        transform: translateX(-50%); /* Centrez horizontalement */
+        background-color: #fff;
+        border: 1px solid #ccc;
+        margin-top: 200px;
+        overflow: auto;
+        z-index: 1000; /* Assurez-vous que la fenêtre modale est au premier plan */
+    }
+
+    h1 {
+      margin-top: 60px;
+    }
+
+    h2, form {
+      text-align: center;
+    }
+
+    </style>
+</head>
+<body>
+  <h1>Bienvenue sur votre tableau de bord, <span style="color: #fff;">{{ user.username }}</span>.</h1>
+    <h2>Sélectionnez un modèle de site :</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="template">Modèle de site :</label>
+        <select name="template" id="template">
+            {% for template in templates %}
+                <option value="{{ template.id }}">{{ template.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Choisir ce modèle</button>
+    </form>
+    <div id="model-preview"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const templateSelect = document.getElementById("template");
+          const modelPreviewContainer = document.getElementById("model-preview");
+
+          templateSelect.addEventListener("change", function () {
+              const selectedTemplateId = templateSelect.value;
+              // Récupérez l'URL pour obtenir l'aperçu du modèle (ajoutez votre logique ici)
+              const previewUrl = `/get_template_preview/${selectedTemplateId}`;
+
+              // Chargez l'aperçu du modèle dans la div "model-preview" en utilisant une requête Ajax, Fetch, ou autre méthode de chargement asynchrone.
+              // Vous devrez créer une vue Django pour gérer cette requête et renvoyer l'aperçu du modèle en réponse.
+
+              // Voici un exemple de chargement d'aperçu avec Fetch :
+              fetch(previewUrl)
+                  .then(response => response.text())
+                  .then(data => {
+                      modelPreviewContainer.innerHTML = data;
+                  })
+                  .catch(error => {
+                      console.error("Une erreur s'est produite : ", error);
+                  });
+          });
+      });
+    </script>
+{% endblock %}
