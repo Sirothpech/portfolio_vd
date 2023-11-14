@@ -40,5 +40,5 @@ class UserLoginForm(AuthenticationForm):
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ['bio', 'date_of_birth', 'profile_picture', 'phone_number', 'address']
+        fields = ['first_name', 'last_name', 'date_of_birth', 'profile_picture','email', 'phone_number', 'address', 'postal_code']
 

@@ -26,6 +26,7 @@ nav {
     z-index: 1000; /* Assurez-vous que la navbar est au-dessus du contenu */
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
 }
 
 .logo {
@@ -58,12 +59,12 @@ nav {
 }
 
 .texte-a-cote {
-    margin: 0 auto 10px 10px
+    margin: 0 auto 10px 10px;
 }
 
 .texte-a-cote p {
     margin: 0; /* Supprime la marge autour du paragraphe */
-    color: #fff; /* Couleur du texte */
+    color: #636363; /* Couleur du texte */
     font-size: 16px; /* Taille de la police (ajustez selon vos besoins) */
 }
 
@@ -84,7 +85,7 @@ nav {
 
 .menu a {
     text-decoration: none;
-    color: #fff;
+    color: #636363;
 }
 
 .menu a:hover {
@@ -384,7 +385,18 @@ button.logout:hover {
 }
 
 #form_create{
-    margin-top:200px;
-    border: 2px solid Black;
+    margin-top: 100px;
 }
 
+button.profile {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    color: #636363; /* Couleur du texte pour ressembler à un lien */
+    cursor: pointer;
+    background: none; /* Supprimer l'arrière-plan du bouton */
+    border: none; /* Supprimer la bordure du bouton */
+    padding: 0; /* Supprimer le rembourrage du bouton */
+    font-size: 16px;
+
+}

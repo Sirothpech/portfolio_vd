@@ -13,10 +13,11 @@
         tinymce.init({
             selector: 'textarea.tinymce',
             plugins: 'ai mentions anchor textcolor code preview autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',
-            toolbar: 'undo redo | forecolor backcolor | formatselect | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+            toolbar: 'undo redo | forecolor backcolor | formatselect | blocks fontfamily fontsize | bold italic underline strikethrough | link image code media table mergetags | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
             ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
             content_css: ['/static/styles/mdb.min.css','/static/styles/styles_portfolio.css', '/static/styles/fontawesome.min.css', '/static/styles/styles2.css'],
             valid_elements: '*[*]',
+            images_upload_url: '../static/images',
         });
         </script>
 </head>

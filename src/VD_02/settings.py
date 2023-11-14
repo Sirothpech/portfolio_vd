@@ -91,7 +91,7 @@ DATABASES = {
 }
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Utilisez la base de données pour stocker les sessions
-SESSION_COOKIE_AGE = 1800  # Durée de vie de la session en secondes (par exemple, 30 min)
+SESSION_COOKIE_AGE = 12000  # Durée de vie de la session en secondes (par exemple, 30 min)
 
 
 # Password validation

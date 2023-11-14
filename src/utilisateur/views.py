@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth import login
+from django.contrib.auth import login, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 from .models import CustomUser,UserProfile
@@ -42,21 +42,24 @@ def create_profile(request):
         user_profile.save()
 
     if request.method == 'POST':
-        form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
-        password_form = PasswordChangeForm(request.user, request.POST)
+        # Si le formulaire de modification de profil est soumis
+        if 'profile_form' in request.POST:
+            form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
+            if form.is_valid():
+                form.save()
+                return redirect('profile')
 
-        if form.is_valid() and password_form.is_valid():
-            form.save()
-            password_form.save()
-            login(request, request.user)
-            return redirect('profile')
-        else:
-
-            return render(request, 'registration/create_profile.html', {'form': form, 'password_form': password_form})
+        # Si le formulaire de changement de mot de passe est soumis
+        elif 'password_form' in request.POST:
+            password_form = PasswordChangeForm(request.user, request.POST)
+            if password_form.is_valid():
+                user = password_form.save()
+                # Met à jour la session de l'utilisateur pour éviter une déconnexion involontaire
+                update_session_auth_hash(request, user)
+                return redirect('profile')
 
     else:
         form = UserProfileForm(instance=user_profile)
         password_form = PasswordChangeForm(request.user)
 
     return render(request, 'registration/create_profile.html', {'form': form, 'password_form': password_form})
-

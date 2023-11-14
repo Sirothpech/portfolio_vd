@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 
+{% load static %}
+
+{% block title %}Accueil{% endblock %}
+
+
 {% block content %}
 
 <section id="apropos">
@@ -35,7 +40,7 @@
           <li>Publicités affichées</li>
       </ul>
       <p class="price">€<span class="large-price">9.99</span>/mo</p>
-      <a href="#" class="cta-button">Inscrivez-vous</a>
+      <a href="{% url 'contact' %}" class="cta-button">Choisir cette offre</a>
   </div>
   <div class="affiche" id="premium">
       <h3>AVANCÉ</h3>
@@ -48,7 +53,7 @@
           <li>Accès à des thèmes premium.</li>
       </ul>
       <p class="price">€<span class="large-price">19.99</span>/mo</p>
-      <a href="#" class="cta-button">Inscrivez-vous</a>
+      <a href="{% url 'contact' %}" class="cta-button">Choisir cette offre</a>
   </div>
   </div>
 </section>

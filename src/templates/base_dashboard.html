@@ -32,6 +32,7 @@
         <li class="bouton"><a href="{% url 'contact' %}">Contact</a></li>
         {% endif %}
         {% if user.is_authenticated %}
+          <li class="bouton"><a href="{% url 'profile' %}">Profile</a></li>
           <li class="bouton"><a href="{% url 'select_template' %}">Templates</a></li>
           <li class="bouton"><form class="" action="{% url 'logout' %}" method="POST">
     {% csrf_token %}

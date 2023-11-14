@@ -1,0 +1,63 @@
+form#form_create {
+  display:flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px;
+  width: 600px;
+  height: 650px;
+  background-color: #fff;
+  margin-top: 100px;
+}
+
+#form_create button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#password_form {
+  margin: 20px;
+}
+
+#password_form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+label {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: black;
+  margin: 0 0 10px 0;
+}
+
+p {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: black;
+}
+
+#password_form button {
+  background-color: #dc3545;
+  color: #fff;
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+a.profile {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  color: #007bff;
+}

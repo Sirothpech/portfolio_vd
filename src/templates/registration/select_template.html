@@ -13,11 +13,10 @@
     <style>
       #model-preview {
         position: fixed;
-        top: 50px; /* Ajustez la position verticale selon vos besoins */
+        top: 120px; /* Ajustez la position verticale selon vos besoins */
         left: 50%; /* Centrez horizontalement */
         transform: translateX(-50%); /* Centrez horizontalement */
         background-color: #fff;
-        border: 1px solid #ccc;
         margin-top: 200px;
         overflow: auto;
         z-index: 1000; /* Assurez-vous que la fenêtre modale est au premier plan */
@@ -31,6 +30,28 @@
       text-align: center;
     }
 
+    .custom-solution-container {
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 5px 5px 15px #d9d9d9, -5px -5px 15px #ffffff;
+      margin-top: 20px;
+    }
+
+    p.custom-solution {
+      font-size: 16px;
+      color: #555;
+    }
+
+    a.contact-link {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a.contact-link:hover {
+      text-decoration: underline;
+    }
     </style>
 </head>
 <body>
@@ -72,4 +93,13 @@
           });
       });
     </script>
+    <div class="custom-solution-container">
+      <p class="custom-solution">
+        Si aucun de nos modèles ne correspond à vos besoins et que vous recherchez une solution personnalisée,
+        n'hésitez pas à nous contacter.
+        <br>Remplissez simplement notre
+        <a href="{% url 'contact' %}" class="contact-link">formulaire de contact</a>,
+        et nous serons ravis de discuter de vos exigences et de créer une solution sur mesure pour vous.
+      </p>
+    </div>
 {% endblock %}
