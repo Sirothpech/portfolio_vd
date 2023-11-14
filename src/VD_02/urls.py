@@ -18,7 +18,9 @@ from django.contrib import admin
 from django.urls import path
 from account.views import register_user, index, login_user, logout_user
 from contact.views import contact
+from django.conf.urls.static import static
 from siteTemplate.views import select_template, edit_template, view_template, get_template_preview
+from utilisateur.views import create_profile, profile
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,5 +33,12 @@ urlpatterns = [
     path('edit_template/<int:template_id>/', edit_template, name='edit_template'),
     path('view_template/<int:template_id>/', view_template, name='view_template'),
     path('get_template_preview/<int:template_id>/', get_template_preview, name='get_template_preview'),
+    path('profile/', profile, name='profile'),
+    path('create_profile/', create_profile, name='create_profile')
 
 ]
+
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

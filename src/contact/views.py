@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib import messages
 from .models import ContactMessage
 
-# Create your views here.
+
 def contact(request):
     if request.method == 'POST':
         subject = request.POST.get('subject')

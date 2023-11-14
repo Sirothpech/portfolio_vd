@@ -1,5 +1,5 @@
 from django import forms
-from .models import CustomUser
+from .models import CustomUser, UserProfile
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 class UserRegistrationForm(UserCreationForm):
@@ -36,3 +36,9 @@ class UserLoginForm(AuthenticationForm):
         label="Mot de passe",
         widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Mot de passe'})
     )
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['bio', 'date_of_birth', 'profile_picture', 'phone_number', 'address']
+

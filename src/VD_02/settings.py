@@ -91,7 +91,7 @@ DATABASES = {
 }
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Utilisez la base de données pour stocker les sessions
-SESSION_COOKIE_AGE = 900  # Durée de vie de la session en secondes (par exemple, 15 min)
+SESSION_COOKIE_AGE = 1800  # Durée de vie de la session en secondes (par exemple, 30 min)
 
 
 # Password validation
@@ -144,3 +144,9 @@ GRAPH_MODELS = {
     'all_applications': True,
     'group_models': True,
 }
+# settings.py
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+

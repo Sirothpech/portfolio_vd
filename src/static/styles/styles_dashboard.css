@@ -383,3 +383,8 @@ button.logout:hover {
     color: #6a86b1;
 }
 
+#form_create{
+    margin-top:200px;
+    border: 2px solid Black;
+}
+

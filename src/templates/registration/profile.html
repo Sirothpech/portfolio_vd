@@ -1,0 +1,18 @@
+{% extends "base_dashboard.html" %}
+{% load static %}
+{% block content %}
+    <h1>Profil de {{ user.username }}</h1>
+    {% if user.userprofile.profile_picture %}
+    <img src="{{ user.userprofile.profile_picture.url }}" alt="Photo de profil" width="100" height="100">
+    {% else %}
+    <p>Aucune photo disponible</p>
+    {% endif %}
+    <p>Nom d'utilisateur : {{ user.username }}</p>
+    <p>Email : {{ user.email }}</p>
+    <p>Bio : {{ user.userprofile.bio }}</p>
+    <p>Date de naissance : {{ user.userprofile.date_of_birth }}</p>
+    <p>Numéro de téléphone : {{ user.userprofile.phone_number }}</p>
+    <p>Adresse : {{ user.userprofile.address }}</p>
+    <a href="{% url 'create_profile' %}">Retour au profil</a>
+
+{% endblock %}
