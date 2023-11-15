@@ -36,9 +36,10 @@ urlpatterns = [
     path('profile/', profile, name='profile'),
     path('create_profile/', create_profile, name='create_profile')
 
+
 ]
 
 from django.conf import settings
-from django.conf.urls.static import static
+
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
