@@ -1,6 +1,6 @@
 
-<div style="display: flex; justify-content: center; align-items: center;">
-  <img src="./static/images/logo_vd_1.png" alt="versatile-design-logo" style="max-width: 100px; max-height: 100px;">
+<div align="center">
+  <img src="./static/images/logo_vd_1.png" alt="versatile-design-logo" style="width: 150px; height: 150px;">
 </div>
 
 <h1 align="center">Versatile Design</h1>
