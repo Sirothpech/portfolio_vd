@@ -4,27 +4,31 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 from .models import CustomUser,UserProfile
 from .forms import UserProfileForm
-@login_required
-def manage_users(request):
-    users = CustomUser.objects.all()
-    return render(request, 'manage_users.html', {'users': users})
 
-@login_required
-def deactivate_user(request, user_id):
-    user = get_object_or_404(CustomUser, id=user_id)
-    user.is_active = False
-    user.save()
-    return redirect('manage_users')
-
-@login_required
-def activate_user(request, user_id):
-    user = get_object_or_404(CustomUser, id=user_id)
-    user.is_active = True
-    user.save()
-    return redirect('manage_users')
 
 @login_required
 def profile(request):
+    """
+    Renders the profile page for the logged-in user.
+
+    Args:
+        request (HttpRequest): The HTTP request object containing information about the current request.
+
+    Returns:
+        HttpResponse: The rendered profile.html template with the user_profile variable.
+
+    Example Usage:
+        Assuming the user is logged in and has a user profile, requesting the profile page will display the user's profile information.
+
+        URL pattern in urls.py:
+        path('profile/', views.profile, name='profile')
+
+        profile.html template:
+        <h1>Profile</h1>
+        <p>Username: {{ request.user.username }}</p>
+        <p>Email: {{ request.user.email }}</p>
+        <p>Profile Picture: <img src="{{ user_profile.profile_picture.url }}" alt="Profile Picture"></p>
+    """
     try:
         user_profile = request.user.userprofile
     except UserProfile.DoesNotExist:
@@ -35,6 +39,15 @@ def profile(request):
 
 @login_required
 def create_profile(request):
+    """
+    Creates or updates user profiles.
+
+    Args:
+        request (HttpRequest): The HTTP request object containing information about the current request.
+
+    Returns:
+        HttpResponse: The rendered 'create_profile.html' template with the `form` and `password_form` as context variables.
+    """
     try:
         user_profile = request.user.userprofile
     except UserProfile.DoesNotExist:

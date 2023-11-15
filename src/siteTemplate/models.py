@@ -4,11 +4,23 @@ from utilisateur.models import CustomUser
 
 
 class SiteTemplate(models.Model):
+    """
+    Represents a site template.
+
+    Fields:
+    - name (CharField): The name of the template (max length: 100 characters).
+    - description (TextField): The description of the template.
+    - html_content (TextField): The HTML content of the template (default: '').
+    """
+
     name = models.CharField(max_length=100)
     description = models.TextField()
     html_content = models.TextField(default='')
 
     def __str__(self):
+        """
+        Returns a string representation of the template by returning its name.
+        """
         return self.name
 
 class UserTemplate(models.Model):

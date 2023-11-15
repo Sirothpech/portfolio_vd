@@ -49,6 +49,16 @@ def register_user(request):
 
 
 def login_user(request):
+    """
+    Handles the login functionality for a user in a Django web application.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: If the form is valid and the user is logged in successfully, the function redirects the user to the 'profile' page.
+        Otherwise, the function renders the 'registration/login.html' template with the form as a context variable.
+    """
     if request.method == 'POST':
         form = UserLoginForm(request, data=request.POST)
         if form.is_valid():
@@ -61,6 +71,25 @@ def login_user(request):
 
 @login_required
 def logout_user(request):
+    """
+    Logs out a user if the request method is POST.
+
+    Args:
+        request (object): The HTTP request object containing information about the current request.
+
+    Returns:
+        object: A rendered HTML template named 'registration/deconnexion.html'.
+
+    Example Usage:
+        # Import necessary modules
+
+        # Define the logout_user function
+        @login_required
+        def logout_user(request):
+            if request.method == 'POST':
+                logout(request)
+            return render(request, 'registration/deconnexion.html')
+    """
     if request.method == 'POST':
         logout(request)
     return render(request, 'registration/deconnexion.html')

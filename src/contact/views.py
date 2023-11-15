@@ -7,17 +7,28 @@ from .models import ContactMessage
 from decouple import config
 
 def contact(request):
+    """
+    Handles a contact form submission in a Django web application.
+
+    Saves the submitted message to the database, sends an email notification to the site owner,
+    and displays a success message to the user.
+
+    Args:
+        request (HttpRequest): The HTTP request object containing the form data.
+
+    Returns:
+        HttpResponseRedirect: Redirects the user to the contact page.
+    """
     if request.method == 'POST':
         nom = request.POST.get('nom')
         email_utilisateur = request.POST.get('email')
-        subject = request.POST.get('subject')  # Nouveau champ pour le sujet
+        subject = request.POST.get('subject')
         message = request.POST.get('message')
 
-        # Créez une nouvelle instance du modèle ContactMessage et enregistrez-la dans la base de données
+
         contact_message = ContactMessage(nom=nom, email=email_utilisateur, subject=subject, message=message)
         contact_message.save()
 
-        # Envoi d'e-mail
         email_subject = subject
         message_body = f'Nom: {nom}\nEmail: {email_utilisateur}\nSujet: {subject}\nMessage: {message}'
         sender_email = email_utilisateur
@@ -25,10 +36,10 @@ def contact(request):
 
         send_mail(email_subject, message_body, sender_email, [receiver_email])
 
-        # Enregistrez un message flash
+
         messages.success(request, 'Demande bien envoyée.')
 
-        # Redirigez l'utilisateur vers la page contact.html
+
         return redirect('contact')
 
     return render(request, 'registration/contact.html')
