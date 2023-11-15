@@ -341,6 +341,7 @@ label {
 
 input[type="text_contact"],
 input[type="email_contact"],
+input[type="subject_contact"],
 textarea {
     width: 90%;
     padding: 10px;
