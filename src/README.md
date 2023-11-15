@@ -100,7 +100,7 @@ Create a file named `.env` in the root of your project and add the following con
 # .env
 
 EMAIL_HOST_USER="votreadressemail@gmail.com"
-EMAIL_HOST_PASSWORD="dzul zssa wkzh hhcu"
+EMAIL_HOST_PASSWORD="5748 2590 6528 1100"
 ```
 
 #### 2. Update .gitignore
