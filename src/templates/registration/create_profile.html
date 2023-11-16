@@ -4,9 +4,15 @@
 {% block content %}
 <head>
     <link rel="stylesheet" href="{% static 'styles/styles_profile.css' %}" />
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("form_create").focus();
+        });
+    </script>
+
 </head>
     <h1>Modification du profil de <span style="color: #fff;">{{ user.username }}</span></h1>
-    <form method="post" enctype="multipart/form-data" id="form_create" autocomplete="off">
+    <form method="post" enctype="multipart/form-data" id="form_create">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" name="profile_form">Enregistrer les modifications du profil</button>

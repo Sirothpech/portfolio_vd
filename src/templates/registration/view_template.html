@@ -9,8 +9,10 @@
 <body>
     {% if template %}
         {{ template.html_content|safe }}
+        <button><a href="{% url 'contact' %}">Pour une presation personnalisée, veuillez nous contacter via ce formulaire</a></button>
     {% else %}
         <p>Modèle de site non trouvé.</p>
     {% endif %}
+
 </body>
 </html>
